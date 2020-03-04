@@ -10,6 +10,9 @@ set softtabstop=4
 " line numbers
 set number
 
+" expand tab to change tabs to spaces
+set expandtab
+
 " enable mouse for everything
 set mouse=a
 
@@ -22,6 +25,12 @@ set smartcase
 
 " Syntax on
 syntax on
+
+" Enable the best colorscheme
+colorscheme elflord
+
+" whitespace highlighting for lone spaces and tabs
+set listchars=tab:➞\ ,extends:›,precedes:‹,nbsp:·,trail:•
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
