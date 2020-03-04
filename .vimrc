@@ -23,6 +23,9 @@ set autoindent
 set ignorecase
 set smartcase
 
+" show file 
+set laststatus=2
+
 " Syntax on
 syntax on
 
