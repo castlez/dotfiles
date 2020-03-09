@@ -1,3 +1,43 @@
+"scriptencoding utf-8
+"set encoding=utf-8
+
+"*****************************************************************************
+"" Vim-PLug core (plugin stuff from matts vimrc)
+" to install:
+" :so ~/.vimrc
+" :PlugInstall
+"*****************************************************************************
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+endif
+
+let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+let g:vim_bootstrap_langs = "c,go,html,javascript,python,rust,typescript"
+let g:vim_bootstrap_editor = "vim"             " nvim or vim
+
+if !filereadable(vimplug_exists)
+    echo "Installing Vim-Plug..."
+    echo ""
+    silent !\curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let g:not_finish_vimplug = "yes"
+    autocmd VimEnter * PlugInstall
+endif
+
+" Required:
+call plug#begin(expand('~/.vim/plugged'))
+
+" fancy status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Syntax Checking
+" need pylint for python syntax (pip install pylint)
+" updates on write
+Plug 'scrooloose/syntastic'
+
+call plug#end()
+" *****************************************************************************
+
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
@@ -6,12 +46,10 @@ nnoremap <C-L> :nohl<CR><C-L>
 " Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
 " line numbers
 set number
-
-" expand tab to change tabs to spaces
-set expandtab
 
 " enable mouse for everything
 set mouse=a
@@ -23,16 +61,11 @@ set autoindent
 set ignorecase
 set smartcase
 
-" show file 
-set laststatus=2
-
 " Syntax on
 syntax on
 
-" Enable the best colorscheme
-colorscheme elflord
-
 " whitespace highlighting for lone spaces and tabs
+set list
 set listchars=tab:➞\ ,extends:›,precedes:‹,nbsp:·,trail:•
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
