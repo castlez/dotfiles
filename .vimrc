@@ -61,6 +61,12 @@ set autoindent
 set ignorecase
 set smartcase
 
+" Move between panes
+noremap <Home> <C-W>k
+inoremap <Home> <Esc> <C-W>k i
+noremap <End> <C-W>j
+inoremap <End> <Esc> <C-W>j i
+
 " Syntax on
 syntax on
 
