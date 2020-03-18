@@ -67,6 +67,11 @@ inoremap <Home> <Esc> <C-W>k i
 noremap <End> <C-W>j
 inoremap <End> <Esc> <C-W>j i
 
+" go to tag, put result in new tab if only one, or vsplit if more than one (id
+" prefer just going to a new tab, but this macro cant handle if there are 
+" multiple options properly. if its vsplit, is <C-W><S-T> to put it into a tab)
+map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR> <C-W><S-T>
+
 " Syntax on
 syntax on
 
