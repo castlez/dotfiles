@@ -54,6 +54,9 @@ set number
 " enable mouse for everything
 set mouse=a
 
+" colorscheme
+colorscheme slate
+
 " auto indent
 set autoindent
 
