@@ -2,7 +2,10 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tool/.oh-my-zsh"
+export ZSH="/home/jcastle/.oh-my-zsh"
+
+# hostname set for cli
+HOSTNAME=$HOST
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -104,3 +107,7 @@ alias paket="/home/tool/.dotnet/tools/paket"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PROMPT='---------------
+%(!.%{%F{yellow}%}.)$USER@%{$fg[white]%}%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
+$fg[green]➜  $fg[white]'
