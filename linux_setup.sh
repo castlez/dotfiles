@@ -1,12 +1,6 @@
 echo "Moving to ~..."
 pushd ~
 
-echo "Making share dir..."
-mkdir share
-
-echo "binding share dir..."
-sudo vmhgfs-fuse -o nonempty -o allow_other .host:/sharedvms ./shared
-
 echo "installing zsh..."
 sudo yum install zsh
 
@@ -21,12 +15,11 @@ popd
 cp .zshrc ~/
 cp .tmux.conf ~/
 cp .vimrc ~/
+cp .gitconfig ~/
 pushd ~
 
 echo "sourcing dot files..."
 source .zshrc
-source .vimrc
-source .tmux.conf
 
 echo "ALL DONE"
 
