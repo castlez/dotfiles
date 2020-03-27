@@ -2,16 +2,22 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jcastle/.oh-my-zsh"
+export ZSH="/root/.oh-my-zsh"
 
 # hostname set for cli
 HOSTNAME=$HOST
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# # it'll load a random theme each time that oh-my-zsh is loaded.
+# # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+SPACESHIP_VI_MODE_SHOW=false
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_HOST_SHOW=true
+SPACESHIP_HOST_SHOW_FULL=true
+SPACESHIP_VENV_SYMBOL="🐍 "
+SPACESHIP_PROMPT_ORDER=(host venv git dir exec_time line_sep char)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,5 +115,7 @@ alias paket="/home/tool/.dotnet/tools/paket"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PROMPT='---------------
-%(!.%{%F{yellow}%}.)$USER@%{$fg[white]%}%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
+%(!.%{%F{yellow}%}.)$USER%{$fg[white]%}@%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
 $fg[green]➜  $fg[white]'
+
+source /bin/virtualenv.sh
