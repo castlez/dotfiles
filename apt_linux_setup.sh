@@ -13,12 +13,8 @@ sudo apt-get install zsh
 echo "getting curl"
 sudo apt-get install curl
 
-echo "getting ohmyzsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo "moving .zshrc"
 cp ./.zshrc ~
-source ~/.zshrc
 
 echo "moving .vimrc"
 cp ./.vimrc ~
@@ -30,3 +26,6 @@ git config --global --add --bool push.autoSetupRemote true
 echo "setting up Castle's git user info"
 git config --global user.name "Castle"
 git config --global user.email "castlez93@gmail.com"
+
+echo "getting ohmyzsh (run 'source ~/.zshrc' to finish setup, im to lazy to make this fancy"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
