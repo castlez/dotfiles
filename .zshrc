@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/root/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # hostname set for cli
 HOSTNAME=$HOST
@@ -81,14 +81,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+alias gmp="git checkout master;git pull"
+
 # User configuration
 
-export PATH=$PATH:/opt/rh/rh-dotnet21/root/usr/bin:/opt/rh/rh-dotnet21/root/usr/sbin
-export PATH=$PATH:/home/tool/.dotnet/tools/paket
-
-alias paket="/home/tool/.dotnet/tools/paket"
-
-# source dotnet so it work
 #scl enable rh-dotnet21 zsh
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -118,4 +114,3 @@ export PROMPT='---------------
 %(!.%{%F{yellow}%}.)$USER%{$fg[white]%}@%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
 $fg[green]➜  $fg[white]'
 
-source /bin/virtualenv.sh
