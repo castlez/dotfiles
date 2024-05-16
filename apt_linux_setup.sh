@@ -22,3 +22,11 @@ source ~/.zshrc
 
 echo "moving .vimrc"
 cp ./.vimrc ~
+
+echo "configuring fancy git features for auto remote setting and 'git st' for status"
+git config --global alias.st status
+git config --global --add --bool push.autoSetupRemote true
+
+echo "setting up Castle's git user info"
+git config --global user.name "Castle"
+git config --global user.email "castlez93@gmail.com"
