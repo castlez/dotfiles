@@ -1,0 +1,5 @@
+black
+debugpy
+mypy
+ruff-lsp
+pyright
