@@ -1,4 +1,4 @@
-# Simple NEOVIM setup
+# "Simple" NEOVIM setup
 
 ## Install
 ```
