@@ -35,14 +35,14 @@ nvim
 ```
 
 # Keybinds
-"leader" is <space> in this config, hit it when in normal mode to open the menu of options
+"leader" is space in this config, hit it when in normal mode to open the menu of options
 
 | action | Bind | Notes |
 |--------|------|-------|
-| Open file explorer (mouse enabled) | ctrl + n ||
-| Toggle breakpoint | <space> + d + b ||
-| Debug current file | <space> + d + p + l | file needs to have a function. The debugger runs the function NOT the file |
-| go back | ctrl + o ||
-| go forward | ctrl + i ||
-| split vertically | ctrl + w + v | this creates a split in the windows. Not that this isn't opening the file in the other split. Click a window, then click a file you have open at the top to put the file in that window|
-| create a file | ctrl + a | make sure focus is in the tree view |
+| Open file explorer (mouse enabled) | ctrl+n ||
+| Toggle breakpoint | space+d+b ||
+| Debug current file | space+d+p+l | file needs to have a function. The debugger runs the function NOT the file |
+| go back | ctrl+o ||
+| go forward | ctrl+i ||
+| split vertically | ctrl+w+v | this creates a split in the windows. Not that this isn't opening the file in the other split. Click a window, then click a file you have open at the top to put the file in that window|
+| create a file | ctrl+a | make sure focus is in the tree view |
