@@ -12,8 +12,9 @@ pip install -r requirements.txt
 chmod +x nvim.appimage
 ./nvim.appimage ~/.local/bin/nvim
 
-# install npm with your package manager, for instance on deb
+# install npm and libfuse2 with your package manager (you might already have libfuse2), for instance on deb
 sudo apt install npm
+sudo apt install libfuse2
 
 cp -R nvim ~/.config/
 
