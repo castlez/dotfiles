@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+# place this in /usr/local/bin or another dir in your path
+
+# NVim openner script
+# sources a venv if there, and restores a session if a sesh.vim file exists in cwd
+
+if [[ -e "./venv" ]]; then
+  source ./venv/bin/activate
+fi
+
+if [[ -e "./sesh.vim" ]]; then
+  nvim -S ./sesh.vim
+else
+  nvim
+fi
