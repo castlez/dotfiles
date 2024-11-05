@@ -5,15 +5,26 @@ local capabilities = config.capabilities
 
 local lspconfig = require("lspconfig")
 
-local servers = {
-  "pyright",
-  "ruff_lsp",
-}
+lspconfig["ruff_lsp"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"python"},
+})
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = {"python"},
-  })
-end
+lspconfig["pyright"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"python"},
+
+  settings = {
+    pyright = {
+      disableOrganizeImports = true, -- Using Ruff for import organization
+    },
+    python = {
+      analysis = {
+        ignore = { '*' }, -- Using Ruff for linting
+        typeCheckingMode = 'off', -- Optional: if using mypy for type checking
+      },
+    },
+  },
+})
