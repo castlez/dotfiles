@@ -39,7 +39,8 @@ function chpwd() {
     ls -a
 }
 
-export PROMPT='---------------
-%(!.%{%F{yellow}%}.)$USER%{$fg[white]%}@%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
-$fg[green]➜  $fg[white]'
+export PROMPT='%{$fg[white]%}---------------
+%(!.%{$fg[yellow]%}.)%n%{$fg[white]%}@%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
+%{$fg[green]%}➜  %{$fg[white]%}'
+
 
