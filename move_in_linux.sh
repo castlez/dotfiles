@@ -6,6 +6,10 @@ sudo dnf install git -y
 sudo dnf install vim -y
 sudo dnf install ctags -y
 
+echo "copying dot files"
+cp .vimrc ~/.vimrc
+sudo ln -s /home/Castle/.vimrc /root/.vimrc
+
 echo "setting vim as editor"
 sudo dnf install vim-default-editor --allowerasing -y
 git config --global core.editor "vim"
@@ -34,6 +38,13 @@ EOF
 
 read -rp "Press Enter to run 'sudo visudo' and apply this change..." _
 sudo visudo
+
+cat << EOF
+Now add this to the sudoer file i open
+Castle ALL=(ALL:ALL) NOPASSWD: ALL
+EOF
+read -rp "press enter when you have it copied, then paste it into the file"
+sudo visudo -f /etc/sudoers.d/castle-nopasswd
 
 # my gitconfig
 echo """
