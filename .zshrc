@@ -54,7 +54,7 @@
  export PROMPT='---------------
  %(!.%F{yellow}.)$USER%F{white}@%M ${ret_status} %F{cyan}%c%f $(git_prompt_info)
  %F{green}➜  %F{white}'
- 
+export EDITOR=vim 
  [[ -s /home/qauser/.autojump/etc/profile.d/autojump.sh ]] && source /home/qauser/.autojump/etc/profile.d/autojump.sh
  autoload -U compinit && compinit -u
  

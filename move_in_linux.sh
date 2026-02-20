@@ -1,22 +1,51 @@
 mkdir -p ~/src
-# clone notes and copy over dot files
+
+echo "installing deps"
 sudo dnf install autojump -y
 sudo dnf install git -y
 sudo dnf install vim -y
 sudo dnf install ctags -y
 
+echo "setting vim as editor"
+sudo dnf install vim-default-editor --allowerasing -y
+git config --global core.editor "vim"
+sudoers_snippet='
+# --- BEGIN: make vim default for sudo/visudo ---
+Defaults        env_reset
+Defaults        env_keep += "EDITOR VISUAL SUDO_EDITOR"
+Defaults        env_editor
+Defaults        editor=/usr/bin/vim
+# --- END: make vim default for sudo/visudo ---
+'
+
+cat <<EOF
+
+******************************************************************
+To make Vim the default editor for sudo/visudo, add this to sudoers:
+
+$sudoers_snippet
+
+It is strongly recommended to use visudo for this edit.
+The script will now run:  sudo visudo
+Paste the above block into an appropriate place (near other Defaults).
+******************************************************************
+
+EOF
+
+read -rp "Press Enter to run 'sudo visudo' and apply this change..." _
+sudo visudo
 
 # my gitconfig
 echo """
 [user]
-        email = jcastle@halcyon.ai
+        email = castlez93@gmail.com
         name = Castle
 [push]
         autoSetupRemote = true
 [pull]
         rebase = true
 [core]
-        hooksPath = /home/qauser/.git-hooks
+        hooksPath = /home/$USER/.git-hooks
 [credential "https://github.com"]
         helper = 
         helper = !/usr/bin/gh auth git-credential
