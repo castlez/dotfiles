@@ -1,5 +1,7 @@
 ######################################################
 # Common commands for qemu virtsh managed vms on linux
+# NOTE: that the script in this dir creates the vms
+# for super user, so you need sudo virtsh to do stuff
 ######################################################
 
 # show network info
