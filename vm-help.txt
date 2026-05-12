@@ -4,6 +4,9 @@
 # for super user, so you need sudo virtsh to do stuff
 ######################################################
 
+# list vms
+sudo virsh list --all
+
 # show network info
 sudo virsh domifaddr fedora44-vm
 
