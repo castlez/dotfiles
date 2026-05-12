@@ -1,0 +1,24 @@
+######################################################
+# Common commands for qemu virtsh managed vms on linux
+######################################################
+
+# show network info
+sudo virsh domifaddr fedora44-vm
+
+# start and stop
+sudo virsh start fedora44-vm
+sudo virsh shutdown fedora44-vm
+
+# snapshot
+sudo virsh snapshot-create-as fedora44-vm --name "snapshot-1" --description "clean install"
+
+# List snapshots to verify:
+sudo virsh snapshot-list fedora44-vm
+
+# Add 10GB to the existing disk (use + prefix to add, or just a size to set absolute):
+sudo virsh shutdown fedora44-vm
+sudo qemu-img resize /var/lib/libvirt/images/fedora44-vm.qcow2 +10G
+
+# snapshot after shutdown
+sudo virsh shutdown fedora44-vm
+sudo virt-clone --original fedora44-vm --name fedora44-vm-clone --auto-clone
